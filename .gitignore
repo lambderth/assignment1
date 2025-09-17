@@ -1,62 +1,72 @@
-# Eclipse
+# === Eclipse ===
 .classpath
 .project
 .settings/
 
-# Gradle
+# === Gradle ===
 .gradle/
 build/
-build.gradle.kts
 gradle-wrapper.jar
 gradle-wrapper.properties
+gradle/libs.versions.toml
+build.gradle.kts
+settings.gradle.kts
 
-# Gradle caches y configuraciones temporales
+# Gradle cache / configuración temporal
 .gradle/
-*/build/
 */tmp/
 */out/
 */generated/
 */test-results/
 */reports/
+*/configuration-cache/
+*/buildOutputCleanup/
+*/fileChanges/
+*/fileHashes/
+*/executionHistory/
+*/vcsMetadata/
+*/*.lock
+*/*.bin
+*/.globals.work.bin
+*/.strings.work.bin
+*/work.bin
+*/_.work.bin
 
-# Maven
+# === Maven ===
 target/
 .mvn/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
+*.pom.tag
+*.pom.releaseBackup
+*.pom.versionsBackup
+*.pom.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/
 
-# IDEs
+# === IDEs y editor ===
 .idea/
 *.iml
 *.ipr
 *.iws
 
-# Logs
+# === Logs ===
 *.log
 
-# System
+# === System files ===
 .DS_Store
 Thumbs.db
 
-# Binaries
+# === Binaries ===
 *.class
 *.jar
 *.war
 *.ear
 
-# Test results / reports
+# === Test results / reports ===
 reports/
 test-results/
 cucumber-reports.html
 
-# Otros temporales
+# === Otros temporales ===
 tmp/
-*.lock
-*.bin
 *.cache
