@@ -43,17 +43,13 @@ public class NavPage extends AbstractComponent {
     public int removeFirstProduct() {
     	Actions actions = new Actions(driver);
         actions.moveToElement(cartButton) 
-               .build()
                .perform();
         
     	WebElement priceElement = driver.findElement(cartElementPrice);
 		String priceText = priceElement.getText();
 		String numberOnly = priceText.replaceAll("[^0-9]", "");
 		
-        actions.moveToElement(removeFromCartButton)
-               .click()  
-               .build()
-               .perform();
+        clickElement(removeFromCartButton);
 		
 		return Integer.parseInt(numberOnly);
     }
