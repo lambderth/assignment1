@@ -3,6 +3,7 @@ package AbstractComponents;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,5 +40,13 @@ public class AbstractComponent {
     public void waitForWebElementToBeClickable(WebElement locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    
+    public void clickElement(WebElement element) {
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block: 'center'});", element);
+
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 }

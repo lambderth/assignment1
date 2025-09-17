@@ -26,7 +26,6 @@ dependencies {
 group = "com.selenium"
 version = "0.0.1-SNAPSHOT"
 description = "testframework"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications.create<MavenPublication>("maven") {
@@ -56,6 +55,5 @@ tasks.named<Test>("test") {
     useTestNG() {
         include("**/TestRunner.class")
     }
-    failOnNoDiscoveredTests = false
 }
 

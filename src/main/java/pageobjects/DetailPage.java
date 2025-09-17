@@ -53,10 +53,10 @@ public class DetailPage extends AbstractComponent {
     public void addToCart() {
     	WebElement cartButton = driver.findElement(addToCart);
     	waitForWebElementToBeClickable(cartButton);
-    	cartButton.click();
+    	clickElement(cartButton);
     	WebElement closeButton = driver.findElement(closePopup);
     	waitForWebElementToAppear(closeButton);
-    	closeButton.click();
+    	clickElement(closeButton);
     	waitForWebElementToDisappear(closeButton);
     }
     
@@ -65,7 +65,7 @@ public class DetailPage extends AbstractComponent {
     		Select select = new Select(sizeDropdown);
 			select.selectByIndex(i);
 			for(WebElement element : colorsList) {
-	    		element.click();
+	    		clickElement(element);
 	    		if(hasStock()) {
 	    			addToCart();
 	    			
