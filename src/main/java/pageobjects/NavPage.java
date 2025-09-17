@@ -31,18 +31,18 @@ public class NavPage extends AbstractComponent {
 
     // Actions
     public ProductListPage goToWomenCategoryPage() {
-        womenCategoryButton.click(); 
+        clickElement(womenCategoryButton); 
         return new ProductListPage(driver);
     }
     
     public CartSummaryPage goToCart() {
-    	cartButton.click();
+    	clickElement(cartButton);
     	return new CartSummaryPage(driver);
     }
     
     public int removeFirstProduct() {
     	Actions actions = new Actions(driver);
-        actions.moveToElement(cartButton) 
+        actions.moveToElement(cartButton)
                .perform();
         
     	WebElement priceElement = driver.findElement(cartElementPrice);
@@ -50,6 +50,7 @@ public class NavPage extends AbstractComponent {
 		String numberOnly = priceText.replaceAll("[^0-9]", "");
 		
         clickElement(removeFromCartButton);
+        waitForWebElementToDisappear(removeFromCartButton);
 		
 		return Integer.parseInt(numberOnly);
     }
